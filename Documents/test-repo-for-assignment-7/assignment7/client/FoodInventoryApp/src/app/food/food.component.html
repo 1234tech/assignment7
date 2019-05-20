@@ -1,0 +1,12 @@
+<div>
+  Brand Name: {{ food.brandName }} <br />
+  Item Name:  {{ food.itemName }} <br />
+  Quantity:  {{ food.quantity }} <br />
+  Expiration Date:  {{ food.expirationMonth }} {{ food.expirationDay }} {{ food.expirationYear }} <br />
+  Location:   {{ food.location }} <br />
+  <a routerLink='/edit/{{food._id}}'>edit</a>
+  <br />
+  <button type="button" (click)='deleteFood()'>delete this item</button>
+  <br  />
+  <br  />
+</div>

@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  
+  a(href='/apifood') Home
+  
+  h2 Grocery Item Inventory list
+  
+  each food in foods
+    p Brand Name: #{food.brandName}
+    p Item Name: #{food.itemName}
+    p Expiration Date: #{food.expirationMonth} #{food.expirationDay} #{food.expirationYear}
+    p Quantity: #{food.quantity}
+    p Location: #{food.location}
+    a(href="/apifood/update/" + food._id) update
+    br
+    a(href="/apifood/delete/" + food._id) delete
+    
+    br
+    br  
+    

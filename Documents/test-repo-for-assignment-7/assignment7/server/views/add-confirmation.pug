@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  a(href='/apifood') Home
+  h2 The following item was added:
+  
+  p Brand Name: #{brandName}
+  p Item Name: #{itemName}
+  p Expiration Date: #{expirationMonth} #{expirationDay} #{expirationYear}
+  p Quantity: #{quantity}
+  p Location: #{location}
+  
+  br
+    

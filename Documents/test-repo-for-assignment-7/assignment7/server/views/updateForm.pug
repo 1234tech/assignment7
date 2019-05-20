@@ -1,0 +1,98 @@
+extends layout
+
+block content
+  
+  a(href='/apifood') Home
+  h2 Edit this grocery item
+  form(method='POST', action='/apifood/update/'+food._id,  enctype='application/x-www-form-urlencoded')
+    fieldset.outsideBorder
+      fieldset.insideBorder
+        label
+          | Brand name
+          br
+          input(type='text', name='brandName', value=food.brandName)
+        br
+        label
+          | Item name 
+          br
+          input(type='text', name='itemName',  value=food.itemName)
+        br
+        br
+        label Expiration date (Month - Day - Year)
+        br
+        select(name='expirationMonth')
+          option(value='', selected=true)
+          option(value='01', selected=food.expirationMonth == '01') January
+          option(value='02', selected=food.expirationMonth == '02') February
+          option(value='03', selected=food.expirationMonth == '03') March
+          option(value='04', selected=food.expirationMonth == '04') April
+          option(value='05', selected=food.expirationMonth == '05') May
+          option(value='06', selected=food.expirationMonth == '06') June
+          option(value='07', selected=food.expirationMonth == '07') July
+          option(value='08', selected=food.expirationMonth == '08') August
+          option(value='09', selected=food.expirationMonth == '09') September
+          option(value='10', selected=food.expirationMonth == '10') October
+          option(value='11', selected=food.expirationMonth == '11') November
+          option(value='12', selected=food.expirationMonth == '12') December
+        select(name='expirationDay')
+          option(value='', selected=true)
+          option(value='01', selected=food.expirationDay == '01') 1
+          option(value='02', selected=food.expirationDay == '02') 2
+          option(value='03', selected=food.expirationDay == '03') 3
+          option(value='04', selected=food.expirationDay == '04') 4
+          option(value='05', selected=food.expirationDay == '05') 5
+          option(value='06', selected=food.expirationDay == '06') 6
+          option(value='07', selected=food.expirationDay == '07') 7
+          option(value='08', selected=food.expirationDay == '08') 8
+          option(value='09', selected=food.expirationDay == '09') 9
+          option(value='10', selected=food.expirationDay == '10') 10
+          option(value='11', selected=food.expirationDay == '11') 11
+          option(value='12', selected=food.expirationDay == '12') 12
+          option(value='13', selected=food.expirationDay == '13') 13
+          option(value='14', selected=food.expirationDay == '14') 14
+          option(value='15', selected=food.expirationDay == '15') 15
+          option(value='16', selected=food.expirationDay == '16') 16
+          option(value='17', selected=food.expirationDay == '17') 17
+          option(value='18', selected=food.expirationDay == '18') 18
+          option(value='19', selected=food.expirationDay == '19') 19
+          option(value='20', selected=food.expirationDay == '20') 20
+          option(value='21', selected=food.expirationDay == '21') 21
+          option(value='22', selected=food.expirationDay == '22') 22
+          option(value='23', selected=food.expirationDay == '23') 23
+          option(value='24', selected=food.expirationDay == '24') 24
+          option(value='25', selected=food.expirationDay == '25') 25
+          option(value='26', selected=food.expirationDay == '26') 26
+          option(value='27', selected=food.expirationDay == '27') 27
+          option(value='28', selected=food.expirationDay == '28') 28
+          option(value='29', selected=food.expirationDay == '29') 29
+          option(value='30', selected=food.expirationDay == '30') 30
+          option(value='31', selected=food.expirationDay == '31') 31
+        select(name='expirationYear')
+          option(value='', selected=true)
+          option(value='2019', selected=food.expirationYear == '2019') 2019
+          option(value='2020', selected=food.expirationYear == '2020') 2020
+          option(value='2021', selected=food.expirationYear == '2021') 2021
+          option(value='2022', selected=food.expirationYear == '2022') 2022
+          option(value='2023', selected=food.expirationYear == '2023') 2023
+          option(value='2024', selected=food.expirationYear == '2024') 2024
+        br
+        br
+        label Quantity
+        br
+        input(type='number', name='quantity', min='0', value=food.quantity)
+        br
+        br
+        label Location
+        br
+        br
+        input(type='radio', name='location', value='pantry', checked=food.location == 'pantry')
+        | Pantry
+        br
+        input(type='radio', name='location', value='refrigerator', checked=food.location == 'refrigerator')
+        | Refrigerator
+        br
+        input(type='radio', name='location', value='freezer', checked=food.location == 'freezer')
+        | Freezer
+        br
+        br
+      input(type='submit', value='Update item', name='button')

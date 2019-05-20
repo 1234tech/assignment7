@@ -1,0 +1,28 @@
+
+<form #newfoodForm="ngForm" (ngSubmit)="save(newfoodForm)">
+
+<a routerLink='/options'>Home</a><br />
+<br />
+
+  <label>Brand Name:</label>
+  <input id="brandName" name="brandName" [(ngModel)]="newfood.brandName"><br />
+
+  <label>Item Name:</label>
+  <input id="itemName" name="itemName" [(ngModel)]="newfood.itemName"><br />
+
+  <label>Quantity:</label>
+  <input type="number" id="quantity" name="quantity" step="1" min="1" [(ngModel)]="newfood.quantity"><br />
+
+  <label>Expiration Date:</label><br />
+  <label>Month</label>
+  <input type="number" id="quantity" name="quantity" step="1" min="1" max="12"[(ngModel)]="newfood.expirationMonth">
+  <label>Day</label>
+  <input type="number" id="quantity" name="quantity" step="1" min="1" max="31"[(ngModel)]="newfood.expirationDay">
+  <label>Year</label>
+  <input type="number" id="quantity" name="quantity" step="1" min="2019" [(ngModel)]="newfood.expirationYear"><br />
+  <label>Location:</label>
+  <input id="itemName" name="itemName" [(ngModel)]="newfood.location"><br />
+
+
+  <button type='submit'>Save</button>
+</form>

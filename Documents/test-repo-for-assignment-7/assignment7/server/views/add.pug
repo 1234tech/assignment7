@@ -1,0 +1,97 @@
+extends layout
+
+block content
+  a(href='/apifood') Home
+  h2 Add a grocery item to your inventory.
+  form(method='POST' action='/apifood/add-confirmation' enctype='application/x-www-form-urlencoded')
+    fieldset.outsideBorder
+      fieldset.insideBorder
+        label
+          | Brand name
+          br
+          input(type='text', name='brandName')
+        br
+        label
+          | Item name 
+          br
+          input(type='text', name='itemName')
+        br
+        br
+        label Expiration date (Month - Day - Year)
+        br
+        select(name='expirationMonth')
+          option(value='')
+          option(value='01') January
+          option(value='02') February
+          option(value='03') March
+          option(value='04') April
+          option(value='05') May
+          option(value='06') June
+          option(value='07') July
+          option(value='08') August
+          option(value='09') September
+          option(value='10') October
+          option(value='11') November
+          option(value='12') December
+        select(name='expirationDay')
+          option(value='')
+          option(value='01') 1
+          option(value='02') 2
+          option(value='03') 3
+          option(value='04') 4
+          option(value='05') 5
+          option(value='06') 6
+          option(value='07') 7
+          option(value='08') 8
+          option(value='09') 9
+          option(value='10') 10
+          option(value='11') 11
+          option(value='12') 12
+          option(value='13') 13
+          option(value='14') 14
+          option(value='15') 15
+          option(value='16') 16
+          option(value='17') 17
+          option(value='18') 18
+          option(value='19') 19
+          option(value='20') 20
+          option(value='21') 21
+          option(value='22') 22
+          option(value='23') 23
+          option(value='24') 24
+          option(value='25') 25
+          option(value='26') 26
+          option(value='27') 27
+          option(value='28') 28
+          option(value='29') 29
+          option(value='30') 30
+          option(value='31') 31
+        select(name='expirationYear')
+          option(value='')
+          option(value='2019') 2019
+          option(value='2020') 2020
+          option(value='2021') 2021
+          option(value='2022') 2022
+          option(value='2023') 2023
+          option(value='2024') 2024
+        br
+        br
+        label Quantity
+        br
+        input(type='number', name='quantity', min='0')
+        br
+        br
+        label Location
+        br
+        br
+        input(type='radio', name='location', value='pantry')
+        | Pantry
+        br
+        input(type='radio', name='location', value='refrigerator')
+        | Refrigerator
+        br
+        input(type='radio', name='location', value='freezer')
+        | Freezer
+        br
+        br
+      input(type='submit', value='Add item', name='button')
